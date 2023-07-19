@@ -480,6 +480,12 @@ impl<'a> Builder<'a> {
         Builder::default()
     }
 
+    /// Exclude user code.
+    pub fn exclude_user(mut self) -> Builder<'a> {
+        self.attrs.set_exclude_user(1);
+        self
+    }
+
     /// Include kernel code.
     pub fn include_kernel(mut self) -> Builder<'a> {
         self.attrs.set_exclude_kernel(0);
